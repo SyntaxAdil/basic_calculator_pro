@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator || Abdur Rahman Adil</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- link css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="calculator-container">
+      <nav class="calculator-nav">
+        <h4 class="title">Calculator</h4>
+        <i class="fa-solid fa-ellipsis-vertical" id="menu-toogle-btn"></i>
+      </nav>
+      <div class="calculator-menu-bar">
+        <div class="menu-top">
+          <i class="fas fa-arrow-left" id="close-menu-btn"></i>
+          <h3 class="title">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            History
+          </h3>
+          <i class="fas fa-sun" id="theme-toggle-btn"></i>
+          <i class="fas fa-trash-can" id="clear-history-btn"></i>
+        </div>
+        <div id="calculator-history-container"></div>
+      </div>
+      <div class="calculator-display">
+        <input
+          type="text"
+          id="cal-display-current"
+          autocomplete="off"
+          readonly
+        />
+        <input
+          type="text"
+          id="cal-display-calculated"
+          autocomplete="off"
+          value="0"
+          class="active"
+          readonly
+        />
+      </div>
+      <div class="calculator-btns">
+        <!-- first row -->
+        <button class="cal-btn gray" onclick="reset()">C</button>
+        <button class="cal-btn gray" onclick="del()">
+          <i class="fas fa-delete-left"></i>
+        </button>
+        <button class="cal-btn green" onclick="appendValue('/')">/</button>
+        <button class="cal-btn green" onclick="appendValue('*')">*</button>
+        <!-- second row -->
+        <button class="cal-btn" onclick="appendValue('7')">7</button>
+        <button class="cal-btn" onclick="appendValue('8')">8</button>
+        <button class="cal-btn" onclick="appendValue('9')">9</button>
+        <button class="cal-btn green" onclick="appendValue('-')">-</button>
+        <!-- third row -->
+        <button class="cal-btn" onclick="appendValue('4')">4</button>
+        <button class="cal-btn" onclick="appendValue('5')">5</button>
+        <button class="cal-btn" onclick="appendValue('6')">6</button>
+        <button class="cal-btn green" onclick="appendValue('+')">+</button>
+        <!-- fourt row -->
+        <button class="cal-btn" onclick="appendValue('1')">1</button>
+        <button class="cal-btn" onclick="appendValue('2')">2</button>
+        <button class="cal-btn" onclick="appendValue('3')">3</button>
+        <button class="cal-btn green equal" onclick="calculate()">=</button>
+        <!-- fift row -->
+        <button class="cal-btn" onclick="appendValue('0')">0</button>
+        <button class="cal-btn" onclick="appendValue('00')">00</button>
+        <button class="cal-btn" onclick="appendValue('.')">.</button>
+      </div>
+
+      <p id="copyRight">&copy;Abdur Rahman Adil</p>
+    </section>
+
+    <!-- link js -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
