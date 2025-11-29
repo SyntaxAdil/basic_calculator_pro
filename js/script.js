@@ -88,6 +88,7 @@ function appendValue(value) {
 // calculate funciton
 
 function calculate() {
+  if(displayCurrentValue.value==="") return
   displayCurrentValue.classList.add("diactive");
   displayCalculatedValue.classList.remove("diactive");
   displayCalculatedValue.classList.add("active");
