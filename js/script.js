@@ -81,6 +81,7 @@ function appendValue(value) {
   displayCalculatedValue.classList.add("diactive");
   displayCurrentValue.classList.remove("diactive");
   displayCurrentValue.classList.add("active");
+  displayCurrentValue.scrollLeft=displayCurrentValue.scrollWidth;
   displayCurrentValue.value += value;
   displayCalculatedValue.value = "=" + eval(displayCurrentValue.value);
 }
