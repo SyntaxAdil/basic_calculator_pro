@@ -74,7 +74,7 @@ container.addEventListener("click", (e) => {
 // funciton for claculating
 let displayCurrentValue = document.getElementById("cal-display-current");
 let displayCalculatedValue = document.getElementById("cal-display-calculated");
-let calculateVal;
+
 
 function appendValue(value) {
   const allowedKeys = "000123456789+-*/.";
@@ -82,8 +82,8 @@ function appendValue(value) {
   displayCalculatedValue.classList.add("diactive");
   displayCurrentValue.classList.remove("diactive");
   displayCurrentValue.classList.add("active");
-  displayCurrentValue.scrollLeft = displayCurrentValue.scrollWidth;
   displayCurrentValue.value += value;
+   displayCurrentValue.scrollLeft = displayCurrentValue.scrollWidth;
   displayCalculatedValue.value = "=" + eval(displayCurrentValue.value);
 }
 
