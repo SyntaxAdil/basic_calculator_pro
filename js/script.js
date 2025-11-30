@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // varibale
 const container = document.querySelector(".calculator-container");
+const displayContainer = document.querySelector(".calculator-display");
 const menuBar = document.querySelector(".calculator-menu-bar");
 const menuToggleBtn = document.getElementById("menu-toogle-btn");
 const themeToggle = document.getElementById("theme-toggle-btn");
@@ -81,7 +82,7 @@ function appendValue(value) {
   displayCalculatedValue.classList.add("diactive");
   displayCurrentValue.classList.remove("diactive");
   displayCurrentValue.classList.add("active");
-  displayCurrentValue.scrollLeft=displayCurrentValue.scrollWidth;
+  displayCurrentValue.scrollLeft = displayCurrentValue.scrollWidth;
   displayCurrentValue.value += value;
   displayCalculatedValue.value = "=" + eval(displayCurrentValue.value);
 }
@@ -89,7 +90,7 @@ function appendValue(value) {
 // calculate funciton
 
 function calculate() {
-  if(displayCurrentValue.value==="") return
+  if (displayCurrentValue.value === "") return;
   displayCurrentValue.classList.add("diactive");
   displayCalculatedValue.classList.remove("diactive");
   displayCalculatedValue.classList.add("active");
@@ -117,7 +118,18 @@ function del() {
   displayCurrentValue.classList.add("active");
   displayCalculatedValue.classList.add("diactive");
   displayCurrentValue.value = displayCurrentValue.value.slice(0, -1);
+  displayCalculatedValue.value = "=" + eval(displayCurrentValue.value);
+  if (displayCurrentValue.value === "") {
+    displayCalculatedValue.value = "0";
+    displayCalculatedValue.classList.remove("diactive");
+    displayCalculatedValue.classList.add("active");
+  }
 }
+
+// focus on display to type
+displayContainer.addEventListener("click", () => {
+  displayCurrentValue.focus();
+});
 
 // key events
 
